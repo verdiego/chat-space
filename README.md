@@ -24,55 +24,48 @@ Things you may want to cover:
 * ...
 
 
-## usersテーブル
+## users table
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, primary_key: true|
-|name|string|null: false, index: true|
-|email|string|null: false, unique: true|
-|password|string|null: false|
-|message_id|integer|foreign_key: true|
-|member_id|integer|foreign_key: true|
+|name|string|index: true, null: false, unique: true|
+|mail|string|null: false|
 
 ### Association
-- has_many :messages, members
-
-
-## groupsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|id|integer|null: false, primary_key: true|
-|name|string|null: false|
-|members_id|integer|null: false, foreign_key: true|
-
-### Association
+- has_many :messages
 - has_many :members
 
 
-## messagesテーブル
+## groups table
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, primary_key: true|
-|body|text|null: false|
+|name|string|null: false, unique: true|
+
+### Association
+- has_many :messages
+
+
+## messages table
+
+|Column|Type|Options|
+|------|----|-------|
+|content|string||
 |image|string||
-|date|timestamp|null: false|
-|group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
 - belongs_to :user
 
 
-## membersテーブル
+## members table
 
 |Column|Type|Options|
 |------|----|-------|
-|group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
