@@ -1,0 +1,50 @@
+html, body {
+  height: 100%;
+}
+
+.log-bar {
+  height: 30px;
+  background-color: #38aef0;
+    p {
+      text-align: center;
+      color: #ffffff;
+    }
+}
+
+.contents {
+  @extend .clearfix;
+  height: 100%;
+  width: 100%;
+}
+
+
+
+.side-bar {
+  min-height: 1000px;
+  width: 300px;
+  background-color: #2f3e51;
+  float: left;
+  .name-zone {
+    height: 96px;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    background-color: #253141;
+    .name {
+      width: 300px-100px;
+      line-height: 96px;
+      float: left;
+      span {
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+    i {
+      line-height: 96px;
+      color: white;
+      float: left;
+      padding-left: 10px;
+    }
+  }
+}
+
