@@ -7,6 +7,7 @@ html, body {
   background-color: #38aef0;
     p {
       text-align: center;
+      line-height: 30px;
       color: #ffffff;
     }
 }
@@ -60,6 +61,74 @@ html, body {
       }
     }
 
+  }
+}
+
+.chat-zone {
+  width: calc(100% - 300px);
+  height: 100%;
+  background-color:#dddddd;
+  float: left;
+  .chat-zone__group {
+    height: 96px;
+    background-color: #ffffff;
+    padding: 0 40px;
+    border-bottom: solid 1px #eeeeee;
+    .chat-zone__group__name{
+      height: 20px;
+      padding-top: 35px;
+      padding-bottom: 15px;
+      float: left;
+      span {
+        font-size: 20px;
+        color:#333333;
+      }
+    }
+    .chat-zone__group__member{
+      float: left;
+      clear: left;
+      span {
+        font-size: 12px;
+        color: #999999;
+      }
+    }
+    .chat-zone__group__button {
+      height: 40px;
+      border: solid 2px #38aef0;
+      float: right;
+      clear: left;
+      a {
+        margin: 0 20px;
+        line-height: 40px;
+      }
+    }
+  }
+  .mesasge-zone {
+    .message-zone__message {
+      .message-zone__message__member {
+        span {
+
+        }
+      }
+      .message-zone__message__date {
+        span {
+
+        }
+      }
+      .message-zone__message__text {
+        span {
+
+        }
+      }
+      }
+  }
+  .send-message-zone {
+    .send-message-zone__input {
+
+    }
+    .send-message-zone__button {
+
+    }
   }
 }
 
