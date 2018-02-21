@@ -24,12 +24,12 @@ html, body {
   width: 300px;
   background-color: #2f3e51;
   float: left;
-  .name-zone {
+  .user-zone {
     height: 96px;
     padding: 0 20px;
     margin-bottom: 20px;
     background-color: #253141;
-    .name {
+    .user {
       width: 300px-100px;
       line-height: 96px;
       float: left;
@@ -45,6 +45,21 @@ html, body {
       float: left;
       padding-left: 10px;
     }
+  }
+  .side-bar__gruop-zone {
+    .side-bar__group {
+      padding: 0 20px 40px;
+      .side-bar__group__name {
+        color: #ffffff;
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+      .side-bar__group__message {
+        color: #ffffff;
+        font-size: 11px;
+      }
+    }
+
   }
 }
 
