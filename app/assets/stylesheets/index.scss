@@ -72,6 +72,7 @@ html, body {
   .chat-zone__group {
     height: 96px;
     background-color: #ffffff;
+    margin-bottom:46px;
     padding: 0 40px;
     border-bottom: solid 1px #eeeeee;
     .chat-zone__group__name{
@@ -84,6 +85,17 @@ html, body {
         color:#333333;
       }
     }
+    .chat-zone__group__button {
+      height: 40px;
+      margin-top: 28px;
+      border: solid 2px #38aef0;
+      float: right;
+      a {
+        margin: 0 20px;
+        line-height: 40px;
+      }
+    }
+  }
     .chat-zone__group__member{
       float: left;
       clear: left;
@@ -92,17 +104,6 @@ html, body {
         color: #999999;
       }
     }
-    .chat-zone__group__button {
-      height: 40px;
-      border: solid 2px #38aef0;
-      float: right;
-      clear: left;
-      a {
-        margin: 0 20px;
-        line-height: 40px;
-      }
-    }
-  }
   .mesasge-zone {
     .message-zone__message {
       .message-zone__message__member {
