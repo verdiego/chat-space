@@ -4,11 +4,11 @@ html, body {
 
 .log-bar {
   height: 30px;
-  background-color: #38aef0;
+  background-color: $mainBlue;
     p {
       text-align: center;
       line-height: 30px;
-      color: #ffffff;
+      color: mainWhite;
     }
 }
 
@@ -35,7 +35,7 @@ html, body {
       line-height: 96px;
       float: left;
       span {
-        color: #ffffff;
+        color: $mainWhite;
         font-size: 16px;
         font-weight: bold;
       }
@@ -51,12 +51,12 @@ html, body {
     .side-bar__group {
       padding: 0 20px 40px;
       .side-bar__group__name {
-        color: #ffffff;
+        color: $mainWhite;
         font-size: 15px;
         margin-bottom: 5px;
       }
       .side-bar__group__message {
-        color: #ffffff;
+        color: $mainWhite;
         font-size: 11px;
       }
     }
@@ -71,7 +71,7 @@ html, body {
   float: left;
   .chat-zone__group {
     height: 96px;
-    background-color: #ffffff;
+    background-color: $mainWhite;
     margin-bottom:46px;
     padding: 0 40px;
     border-bottom: solid 1px #eeeeee;
@@ -88,11 +88,12 @@ html, body {
     .chat-zone__group__button {
       height: 40px;
       margin-top: 28px;
-      border: solid 2px #38aef0;
+      border: solid 2px $mainBlue;
       float: right;
       a {
         margin: 0 20px;
         line-height: 40px;
+        color: $mainBlue;
       }
     }
   }
@@ -101,24 +102,36 @@ html, body {
       clear: left;
       span {
         font-size: 12px;
-        color: #999999;
+        color: $fontGray;
       }
     }
   .mesasge-zone {
+    width: 100%;
+    padding: 0 40px;
     .message-zone__message {
+      margin-bottom: 40px;
       .message-zone__message__member {
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
         span {
-
+          font-size: 16px;
+          font-weight: bold;
+          color: $fontBlack;
         }
       }
       .message-zone__message__date {
+        float: left;
         span {
-
+          font-size: 12px;
+          color: $fontGray;
         }
       }
       .message-zone__message__text {
+        clear: both;
         span {
-
+          font-size: 14px;
+          color: $fontBlack;
         }
       }
       }
