@@ -46,7 +46,7 @@ html, body {
       }
       i {
         line-height: 96px;
-        color: white;
+        color: $mainWhite;
         float: left;
         padding-left: 10px;
       }
@@ -158,6 +158,12 @@ html, body {
         background-color: $mainWhite;
         padding: 0 10px;
         float: left;
+        i {
+          line-height: 50px;
+          color: mainBlack;
+          float: right;
+          margin-right: 10px;
+        }
       }
       .send-message-zone__button {
         width: 85px;
