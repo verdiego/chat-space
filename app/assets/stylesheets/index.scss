@@ -35,7 +35,7 @@ html, body {
       margin-bottom: 20px;
       background-color: #253141;
       .user {
-        width: 300px-100px;
+        width: 100%;
         line-height: 96px;
         float: left;
         span {
@@ -43,12 +43,14 @@ html, body {
           font-size: 16px;
           font-weight: bold;
         }
-      }
-      i {
-        line-height: 96px;
-        color: $mainWhite;
-        float: left;
-        padding-left: 10px;
+        a {
+          float: right;
+          margin-right: 10px;
+          i {
+            line-height: 96px;
+            color: $mainWhite;
+          }
+        }
       }
     }
     .side-bar__gruop-zone {
@@ -94,18 +96,20 @@ html, body {
       .chat-zone__group__button {
         height: 40px;
         margin-top: 28px;
+        background-color: $mainWhite;
         border: solid 2px $mainBlue;
         float: right;
-        a {
+        span {
+          height: 100%;
           margin: 0 20px;
-          line-height: 40px;
-          color: $mainBlue;
+          display: flex;
+          align-items: center;
         }
       }
       .chat-zone__group__member{
         float: left;
         clear: left;
-        margin-top: 10px;
+        margin-top: 15px;
         span {
           font-size: 12px;
           color: $fontGray;

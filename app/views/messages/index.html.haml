@@ -5,8 +5,10 @@
     .user-zone
       .user
         %span sample user
-      %i.fa.fa-pencil-square-o
-      %i.fa.fa-cog
+        = link_to "#" do
+          %i.fa.fa-cog
+        = link_to "#" do
+          %i.fa.fa-pencil-square-o
     .side-bar__gruop-zone
       .side-bar__group
         .side-bar__group__name
@@ -22,8 +24,8 @@
     .chat-zone__group
       .chat-zone__group__name
         %span SAMPLEグループ
-      .chat-zone__group__button
-        %a Edit
+      %a.chat-zone__group__button{:href => "#"}
+        %span Edit
       .chat-zone__group__member
         %span Member:
         %span メンバー
@@ -93,6 +95,7 @@
           %span プロしい
     .send-message-zone
       .send-message-zone__input
-        %i.fa.fa-photo
+        = link_to "#" do
+          %i.fa.fa-photo
       .send-message-zone__button
         %span Send
