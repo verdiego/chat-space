@@ -10,7 +10,8 @@
         = link_to "#" do
           %i.fa.fa-pencil-square-o
     .side-bar__gruop-zone
-      = render partial: "side-bar__group"
+      - for i in 1..20
+        = render partial: "side-bar__group"
   .chat-zone
     .chat-zone__group
       .chat-zone__group__name
