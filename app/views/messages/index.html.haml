@@ -30,7 +30,8 @@
         %span Member:
         %span メンバー
     .mesasge-zone
-      = render partial: "message-zone__message"
+      - for i in 1..10
+        = render partial: "message-zone__message"
     .send-message-zone
       .send-message-zone__input
         = link_to "#" do
