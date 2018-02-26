@@ -1,148 +1,177 @@
+* {
+  box-sizing: border-box;
+}
+
 html, body {
-  height: 100%;
-}
-
-.log-bar {
-  height: 30px;
-  background-color: $mainBlue;
-    p {
-      text-align: center;
-      line-height: 30px;
-      color: mainWhite;
-    }
-}
-
-.contents {
-  @extend .clearfix;
   height: 100%;
   width: 100%;
 }
 
-
-
-.side-bar {
-  min-height: 1000px;
-  width: 300px;
-  background-color: #2f3e51;
-  float: left;
-  .user-zone {
-    height: 96px;
-    padding: 0 20px;
-    margin-bottom: 20px;
-    background-color: #253141;
-    .user {
-      width: 300px-100px;
-      line-height: 96px;
-      float: left;
-      span {
-        color: $mainWhite;
-        font-size: 16px;
-        font-weight: bold;
-      }
+.log-bar {
+  width: 100%;
+  height: 30px;
+  background-color: $mainBlue;
+  position: fixed;
+  z-index: 999;
+    p {
+      text-align: center;
+      line-height: 30px;
+      color: $mainWhite;
     }
-    i {
-      line-height: 96px;
-      color: white;
-      float: left;
-      padding-left: 10px;
-    }
-  }
-  .side-bar__gruop-zone {
-    .side-bar__group {
-      padding: 0 20px 40px;
-      .side-bar__group__name {
-        color: $mainWhite;
-        font-size: 15px;
-        margin-bottom: 5px;
-      }
-      .side-bar__group__message {
-        color: $mainWhite;
-        font-size: 11px;
-      }
-    }
-
-  }
 }
 
-.chat-zone {
-  width: calc(100% - 300px);
+.contents {
   height: 100%;
-  background-color:#dddddd;
-  float: left;
-  .chat-zone__group {
-    height: 96px;
-    background-color: $mainWhite;
-    margin-bottom:46px;
-    padding: 0 40px;
-    border-bottom: solid 1px #eeeeee;
-    .chat-zone__group__name{
-      height: 20px;
-      padding-top: 35px;
-      padding-bottom: 15px;
-      float: left;
-      span {
-        font-size: 20px;
-        color:#333333;
-      }
-    }
-    .chat-zone__group__button {
-      height: 40px;
-      margin-top: 28px;
-      border: solid 2px $mainBlue;
-      float: right;
-      a {
-        margin: 0 20px;
-        line-height: 40px;
-        color: $mainBlue;
-      }
-    }
-  }
-    .chat-zone__group__member{
-      float: left;
-      clear: left;
-      span {
-        font-size: 12px;
-        color: $fontGray;
-      }
-    }
-  .mesasge-zone {
-    width: 100%;
-    padding: 0 40px;
-    .message-zone__message {
-      margin-bottom: 40px;
-      .message-zone__message__member {
+  width: 100%;
+  position: fixed;
+  .side-bar {
+    min-height: 100%;
+    width: 300px;
+    background-color: #2f3e51;
+    position: absolute;
+    .user-zone {
+      height: 96px;
+      padding: 0 20px;
+      margin-bottom: 20px;
+      background-color: #253141;
+      .user {
+        width: 300px-100px;
+        line-height: 96px;
         float: left;
-        margin-right: 10px;
-        margin-bottom: 10px;
         span {
+          color: $mainWhite;
           font-size: 16px;
           font-weight: bold;
-          color: $fontBlack;
         }
       }
-      .message-zone__message__date {
+      i {
+        line-height: 96px;
+        color: white;
         float: left;
+        padding-left: 10px;
+      }
+    }
+    .side-bar__gruop-zone {
+      .side-bar__group {
+        padding: 0 20px 40px;
+        .side-bar__group__name {
+          color: $mainWhite;
+          font-size: 15px;
+          margin-bottom: 5px;
+        }
+        .side-bar__group__message {
+          color: $mainWhite;
+          font-size: 11px;
+        }
+      }
+
+    }
+  }
+
+  .chat-zone {
+    width: calc(100vw - 300px);
+    height: 100%;
+    background-color:#dddddd;
+    position: absolute;
+    left: 300px;
+    // float: left;
+    .chat-zone__group {
+      height: 96px;
+      background-color: $mainWhite;
+      position: relative;
+      padding: 0 40px;
+      border-bottom: solid 1px #eeeeee;
+      .chat-zone__group__name{
+        height: 20px;
+        padding-top: 35px;
+        padding-bottom: 15px;
+        float: left;
+        span {
+          font-size: 20px;
+          color:#333333;
+        }
+      }
+      .chat-zone__group__button {
+        height: 40px;
+        margin-top: 28px;
+        border: solid 2px $mainBlue;
+        float: right;
+        a {
+          margin: 0 20px;
+          line-height: 40px;
+          color: $mainBlue;
+        }
+      }
+      .chat-zone__group__member{
+        float: left;
+        clear: left;
+        margin-top: 10px;
         span {
           font-size: 12px;
           color: $fontGray;
         }
       }
-      .message-zone__message__text {
-        clear: both;
-        span {
-          font-size: 14px;
-          color: $fontBlack;
+    }
+    .mesasge-zone {
+      width: 100%;
+      height: calc(100% - 96px - 50px);
+      padding: 40px;
+      overflow-y: scroll;
+      .message-zone__message {
+        margin-bottom: 40px;
+        .message-zone__message__member {
+          float: left;
+          margin-right: 10px;
+          margin-bottom: 10px;
+          span {
+            font-size: 16px;
+            font-weight: bold;
+            color: $fontBlack;
+          }
+        }
+        .message-zone__message__date {
+          float: left;
+          span {
+            font-size: 12px;
+            color: $fontGray;
+          }
+        }
+        .message-zone__message__text {
+          clear: both;
+          span {
+            font-size: 14px;
+            color: $fontBlack;
+          }
         }
       }
-      }
-  }
-  .send-message-zone {
-    .send-message-zone__input {
-
     }
-    .send-message-zone__button {
-
+    .send-message-zone {
+      width: 100%;
+      height: 90px;
+      padding: 20px 40px;
+      background-color: $fontGray;
+      position: absolute;
+      bottom: 0;
+      .send-message-zone__input {
+        width: calc(100% - 125px);
+        height: 50px;
+        background-color: $mainWhite;
+        padding: 0 10px;
+        float: left;
+      }
+      .send-message-zone__button {
+        width: 85px;
+        height: 50px;
+        background-color: $mainBlue;
+        margin-left:15px;
+        float: right;
+        span {
+          font-size: 16px;
+          line-height: 50px;
+          color: $mainWhite;
+          margin: 0 20px;
+        }
+      }
     }
   }
 }
-
