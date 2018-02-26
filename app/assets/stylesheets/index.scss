@@ -32,7 +32,6 @@ html, body {
     .user-zone {
       height: 96px;
       padding: 0 20px;
-      margin-bottom: 20px;
       background-color: #253141;
       .user {
         width: 100%;
@@ -54,6 +53,9 @@ html, body {
       }
     }
     .side-bar__gruop-zone {
+      height: calc(100vh - 96px);
+      padding-top: 20px;
+      overflow-y: scroll;
       .side-bar__group {
         padding: 0 20px 40px;
         .side-bar__group__name {
@@ -76,7 +78,6 @@ html, body {
     background-color:#dddddd;
     position: absolute;
     left: 300px;
-    // float: left;
     .chat-zone__group {
       height: 96px;
       background-color: $mainWhite;
