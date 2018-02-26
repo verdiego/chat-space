@@ -10,16 +10,7 @@
         = link_to "#" do
           %i.fa.fa-pencil-square-o
     .side-bar__gruop-zone
-      .side-bar__group
-        .side-bar__group__name
-          %p ぐるーぷ１
-        .side-bar__group__message
-          %p no messages
-      .side-bar__group
-        .side-bar__group__name
-          %p ぐるーぷ2
-        .side-bar__group__message
-          %p yahho
+      = render partial: "side-bar__group"
   .chat-zone
     .chat-zone__group
       .chat-zone__group__name
