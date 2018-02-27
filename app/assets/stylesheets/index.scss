@@ -123,6 +123,7 @@ html, body {
       width: 100%;
       height: calc(100% - 96px - 50px);
       padding: 40px;
+      overflow-x: scroll;
       overflow-y: scroll;
       .message-zone__message {
         margin-bottom: 40px;
