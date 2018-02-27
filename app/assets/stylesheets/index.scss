@@ -101,10 +101,12 @@ html, body {
         border: solid 2px $mainBlue;
         float: right;
         span {
-          height: 100%;
+          display: inline-block;
+          width: 100%;
           margin: 0 20px;
-          display: flex;
-          align-items: center;
+          font-size: 16px;
+          line-height: 36px;
+          color: $mainBlue;;
         }
       }
       .chat-zone__group__member{
