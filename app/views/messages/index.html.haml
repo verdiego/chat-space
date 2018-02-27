@@ -25,8 +25,8 @@
       - for i in 1..10
         = render partial: "message-zone__message"
     .send-message-zone
-      .send-message-zone__input
-        = link_to "#" do
-          %i.fa.fa-photo
-      .send-message-zone__button
+      %input.send-message-zone__input{:placeholder => "type a message", :type => "text"}
+      = link_to "#" do
+        %i.fa.fa-photo
+      %a.send-message-zone__button{:href => "#"}
         %span Send
