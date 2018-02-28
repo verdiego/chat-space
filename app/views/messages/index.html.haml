@@ -1,0 +1,32 @@
+.log-bar
+  %p チャットグループが作成されました
+.contents
+  .side-bar
+    .side-bar__user-zone
+      .side-bar__user-zone__user
+        %span sample user
+        = link_to "#" do
+          %i.fa.fa-cog
+        = link_to "#" do
+          %i.fa.fa-pencil-square-o
+    .side-bar__group-zone
+      - for i in 1..20
+        = render partial: "side-bar__group-zone__group"
+  .chat-zone
+    .chat-zone__group
+      .chat-zone__group__name
+        %span SAMPLEグループ
+      %a.chat-zone__group__button{href: "#"}
+        %span Edit
+      .chat-zone__group__member
+        %span Member:
+        %span メンバー
+    .message-zone
+      - for i in 1..10
+        = render partial: "message-zone__message"
+    .send-message-zone
+      %input.send-message-zone__input{placeholder: "type a message", type: "text"}
+      = link_to "#" do
+        %i.fa.fa-photo
+      %a.send-message-zone__button{href: "#"}
+        %span Send
