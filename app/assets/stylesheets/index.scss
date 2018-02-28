@@ -29,11 +29,11 @@ html, body {
     width: 300px;
     background-color: #2f3e51;
     position: absolute;
-    .user-zone {
+    &__user-zone {
       height: 96px;
       padding: 0 20px;
       background-color: #253141;
-      .user {
+      &__user {
         width: 100%;
         line-height: 96px;
         float: left;
@@ -52,39 +52,37 @@ html, body {
         }
       }
     }
-    .side-bar__gruop-zone {
+    &__group-zone {
       height: calc(100vh - 96px);
       padding-top: 20px;
       overflow-y: scroll;
-      .side-bar__group {
+      &__group {
         padding: 0 20px 40px;
-        .side-bar__group__name {
+        &__name {
           color: $mainWhite;
           font-size: 15px;
           margin-bottom: 5px;
         }
-        .side-bar__group__message {
+        &__message {
           color: $mainWhite;
           font-size: 11px;
         }
       }
-
     }
   }
-
   .chat-zone {
     width: calc(100vw - 300px);
     height: 100%;
     background-color:#dddddd;
     position: absolute;
     left: 300px;
-    .chat-zone__group {
+    &__group {
       height: 96px;
       background-color: $mainWhite;
       position: relative;
       padding: 0 40px;
       border-bottom: solid 1px #eeeeee;
-      .chat-zone__group__name{
+      &__name{
         height: 20px;
         padding-top: 35px;
         padding-bottom: 15px;
@@ -94,7 +92,7 @@ html, body {
           color:#333333;
         }
       }
-      .chat-zone__group__button {
+      &__button {
         height: 40px;
         margin-top: 28px;
         background-color: $mainWhite;
@@ -109,7 +107,7 @@ html, body {
           color: $mainBlue;;
         }
       }
-      .chat-zone__group__member{
+      &__member{
         float: left;
         clear: left;
         margin-top: 15px;
@@ -119,15 +117,15 @@ html, body {
         }
       }
     }
-    .mesasge-zone {
+    .message-zone {
       width: 100%;
       height: calc(100% - 96px - 50px);
       padding: 40px;
       overflow-x: scroll;
       overflow-y: scroll;
-      .message-zone__message {
+      &__message {
         margin-bottom: 40px;
-        .message-zone__message__member {
+        &__member {
           float: left;
           margin-right: 10px;
           margin-bottom: 10px;
@@ -137,14 +135,14 @@ html, body {
             color: $fontBlack;
           }
         }
-        .message-zone__message__date {
+        &__date {
           float: left;
           span {
             font-size: 12px;
             color: $fontGray;
           }
         }
-        .message-zone__message__text {
+        &__text {
           clear: both;
           span {
             font-size: 14px;
@@ -161,7 +159,7 @@ html, body {
       background-color: $fontGray;
       position: absolute;
       bottom: 0;
-      .send-message-zone__input {
+      &__input {
         width: calc(100% - 160px);
         height: 50px;
         background-color: $mainWhite;
@@ -180,7 +178,7 @@ html, body {
         margin-right: 10px;
         border: none;
       }
-      .send-message-zone__button {
+      &__button {
         height: 50px;
         width: 100px;
         background-color: $mainBlue;

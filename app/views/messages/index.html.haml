@@ -2,16 +2,16 @@
   %p チャットグループが作成されました
 .contents
   .side-bar
-    .user-zone
-      .user
+    .side-bar__user-zone
+      .side-bar__user-zone__user
         %span sample user
         = link_to "#" do
           %i.fa.fa-cog
         = link_to "#" do
           %i.fa.fa-pencil-square-o
-    .side-bar__gruop-zone
+    .side-bar__group-zone
       - for i in 1..20
-        = render partial: "side-bar__group"
+        = render partial: "side-bar__group-zone__group"
   .chat-zone
     .chat-zone__group
       .chat-zone__group__name
@@ -21,7 +21,7 @@
       .chat-zone__group__member
         %span Member:
         %span メンバー
-    .mesasge-zone
+    .message-zone
       - for i in 1..10
         = render partial: "message-zone__message"
     .send-message-zone
