@@ -1,18 +1,7 @@
 .log-bar
   %p チャットグループが作成されました
 .contents
-  .side-bar
-    .side-bar__user-zone
-      .side-bar__user-zone__user
-        %span
-          = current_user.name
-        = link_to edit_user_path(current_user) do
-          = fa_icon 'cog', class: 'icon'
-        = link_to new_group_path do
-          = fa_icon 'pencil-square-o', class: 'icon'
-    .side-bar__group-zone
-      - for i in 1..20
-        = render partial: "side-bar__group-zone__group"
+  = render partial: "side-bar__group-zone__group", locals: { group: @group }
   .chat-zone
     .chat-zone__group
       .chat-zone__group__name

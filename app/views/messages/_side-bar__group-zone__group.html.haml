@@ -1,5 +1,17 @@
-.side-bar__group-zone__group
-  .side-bar__group-zone__group__name
-    %p ぐるーぷ１
-  .side-bar__group-zone__group__message
-    %p no messages
+.side-bar
+  .side-bar__user-zone
+    .side-bar__user-zone__user
+      %span
+        = current_user.name
+      = link_to edit_user_path(current_user) do
+        = fa_icon 'cog', class: 'icon'
+      = link_to new_group_path do
+        = fa_icon 'pencil-square-o', class: 'icon'
+  .side-bar__group-zone
+    - current_user.groups.each do |group|
+      = link_to group_messages_path(group) do
+        .side-bar__group-zone__group
+          .side-bar__group-zone__group__name
+            = group.name
+          .side-bar__group-zone__group__message
+            %p no messages
