@@ -160,10 +160,10 @@ html, body {
       position: absolute;
       bottom: 0;
       &__input {
-        width: calc(100% - 160px);
+        width: calc(100% - 100px);
         height: 50px;
         background-color: $mainWhite;
-        padding: 0 10px;
+        padding-left: 10px;
         float: left;
         border: none;
       }
@@ -173,7 +173,7 @@ html, body {
         line-height: 50px;
         background-color: $mainWhite;
         color: mainBlack;
-        float: left;
+        float: right;
         padding: 0 15px;
         margin-right: 10px;
         border: none;
