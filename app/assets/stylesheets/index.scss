@@ -160,29 +160,35 @@ html, body {
       position: absolute;
       bottom: 0;
       &__input {
-        width: calc(100% - 100px);
+        width: calc(100% - 150px);
         height: 50px;
         background-color: $mainWhite;
         padding-left: 10px;
         float: left;
         border: none;
       }
-      i {
-        display: block;
-        height: 50px;
-        line-height: 50px;
-        background-color: $mainWhite;
-        color: mainBlack;
-        float: right;
-        padding: 0 15px;
-        margin-right: 10px;
-        border: none;
+      &__pic{
+        i {
+          display: block;
+          height: 50px;
+          line-height: 50px;
+          background-color: $mainWhite;
+          color: mainBlack;
+          float: left;
+          padding: 0 15px;
+          border: none;
+        }
+        #message_hidden{
+          display: none;
+        }
       }
-      &__button {
+      &__send {
         height: 50px;
         width: 100px;
         background-color: $mainBlue;
-        float: right;
+        float: left;
+        color: $mainWhite;
+        border-style: none;
         span {
           display: inline-block;
           width: 100%;
