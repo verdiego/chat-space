@@ -1,0 +1,13 @@
+.message-zone__message
+  .message-zone__message__member
+    %span
+      = message.user.name
+  .message-zone__message__date
+    %span
+      / = format_posted_time(message.created_at)
+      = message.created_at.to_s
+  .message-zone__message__text
+    - if message.content.present?
+      %span
+        = message.content
+    = image_tag message.image.url, class: '.message-zone__message__text' if message.image.present?
