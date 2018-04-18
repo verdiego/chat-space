@@ -12,12 +12,11 @@
         %span Member:
         %span メンバー
     .message-zone
-      - for i in 1..10
-        = render partial: "message-zone__message"
+      = render partial: 'message', collection: @messages
     .send-message-zone
       = form_for [@group, @message] do |f|
         = f.text_field :content, class: 'send-message-zone__input', placeholder: 'type a message'
         = f.label :image, class: 'send-message-zone__pic' do
           = fa_icon 'picture-o'
-          = f.file_field 'hidden'
+          = f.file_field :image, id: 'message_hidden'
         = f.submit 'Send', class: 'send-message-zone__send'
