@@ -31,5 +31,13 @@ $(function(){
       processData: false,
       contentType: false
     })
+    .done(function(data){
+      var html = buildHTML(data);
+      $('.message-zone').append(html)
+      $('.send-message-zone__input').val('')
+    })
+    .fail(function(){
+      alert('error');
+    })
   })
 });
