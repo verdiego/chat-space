@@ -1,8 +1,6 @@
 $(function(){
   function buildHTML(message){
-    console.log($('.message-zone').height());
     if (message.image.url != null) {
-      console.log(message.image);
       var html = `<div class="message-zone__message">
                     <div class="message-zone__message__member">
                       <span>
