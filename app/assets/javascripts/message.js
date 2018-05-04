@@ -59,6 +59,7 @@ $(function(){
       $('.message-zone').append(html);
       $('.send-message-zone__input').val('');
       $('.send-message-zone__send').prop('disabled',false);
+      $('.message-zone').animate({scrollTop: $('.message-zone')[0].scrollHeight}, 'slow');
     })
     .fail(function(){
       alert('error');
