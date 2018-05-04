@@ -8,7 +8,7 @@ $(function(){
                   </div>
                   <div class="message-zone__message__date">
                     <span>
-                      ${dateToFormatString(message.created_at, '%YYYY%年%MM%月%DD%日 (%w%) %HH%時%mm%分%ss%秒')}
+                      ${message.created_at}
                     </span>
                   </div>
                   <div class="message-zone__message__text">
