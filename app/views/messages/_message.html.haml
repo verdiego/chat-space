@@ -9,5 +9,5 @@
     - if message.content.present?
       %p
         = message.content
-    %p
-      = image_tag message.image.url, class: '.message-zone__message__text' if message.image.present?
+    - if message.image.present?
+      = image_tag message.image.url, class: '.message-zone__message__text'
