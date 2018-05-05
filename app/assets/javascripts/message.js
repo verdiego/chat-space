@@ -1,43 +1,31 @@
 $(function(){
   function buildHTML(message){
-    if (message.image.url != null) {
-      var html = `<div class="message-zone__message">
-                    <div class="message-zone__message__member">
-                      <span>
-                        ${message.user.name}
-                      </span>
-                    </div>
-                    <div class="message-zone__message__date">
-                      <span>
-                        ${message.created_at}
-                      </span>
-                    </div>
-                    <div class="message-zone__message__text">
-                      <span>
-                        ${message.content}
-                      </span>
-                      <img class=".message-zone__message__text" src="${message.image.url}" alt="${message.image}">
-                    </div>
-                  </div>`
-    }else{
-      var html = `<div class="message-zone__message">
-                    <div class="message-zone__message__member">
-                      <span>
-                        ${message.user.name}
-                      </span>
-                    </div>
-                    <div class="message-zone__message__date">
-                      <span>
-                        ${message.created_at}
-                      </span>
-                    </div>
-                    <div class="message-zone__message__text">
-                      <span>
-                        ${message.content}
-                      </span>
-                    </div>
-                  </div>`
-    }
+    var image;
+    $(function() {
+      if (message.image.url != null) {
+        image = "<img class='.message-zone__message__text' src=" + message.image.url + " alt=" + message.image.url + ">"
+      }else{
+        image = ''
+      }
+    });
+    var html = `<div class="message-zone__message">
+                  <div class="message-zone__message__member">
+                    <span>
+                      ${message.user.name}
+                    </span>
+                  </div>
+                  <div class="message-zone__message__date">
+                    <span>
+                      ${message.created_at}
+                    </span>
+                  </div>
+                  <div class="message-zone__message__text">
+                    <p>
+                      ${message.content}
+                    </p>
+                      ${image}
+                  </div>
+                </div>`
     return html;
   }
   $('#new_message').on('submit', function(e){
