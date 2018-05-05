@@ -44,6 +44,7 @@ $(function(){
       var html = buildHTML(data);
       $('.message-zone').append(html);
       $('.send-message-zone__input').val('');
+      $('#message_image').val('');
       $('.send-message-zone__send').prop('disabled',false);
       $('.message-zone').animate({scrollTop: $('.message-zone')[0].scrollHeight}, 'slow');
     })
