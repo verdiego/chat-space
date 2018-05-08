@@ -20,5 +20,20 @@ $(function(){
       data: { keyword: input },
       dataType: 'json'
     })
+    .done(function(users) {
+      $("#user-search-result").empty();
+      if(input.length == 0){
+        appendNoUser("");
+      }else if (users.length !== 0) {
+        users.forEach(function(user){
+          appendUser(user);
+        });
+      }else {
+        appendNoUser("一致するユーザーはいません");
+      }
+    })
+    .fail(function(){
+      alert('ユーザー検索に失敗しました');
+    });
   })
 });
