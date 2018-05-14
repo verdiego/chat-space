@@ -6,8 +6,7 @@
     .chat-zone__group
       .chat-zone__group__name
         %span SAMPLEグループ
-      %a.chat-zone__group__button{href: edit_group_path(params[:group_id])}
-        %span Edit
+      = link_to "Edit", edit_group_path(params[:group_id]), class: 'chat-zone__group__button'
       .chat-zone__group__member
         %span Member:
         %span メンバー
