@@ -46,14 +46,14 @@ $(function(){
     });
   });
 
-  $(document).on('click', ".user-search-add", function(){
+  $('#user-search-result').on('click', ".user-search-add", function(){
     $('#user-search-field').val('');
     var user_id = $(this).data('user-id')
     var user_name = $(this).data('user-name')
     appendUserToMember(user_name, user_id)
     $(this).parent().remove()
   })
-$(document).on('click', '.user-search-remove', function(){
+  $('#user-search-result').on('click', '.user-search-remove', function(){
       $(this).parent().remove();
   })
 });
