@@ -3,11 +3,7 @@ $(document).on('turbolinks:load', function(){
     function buildHTML(message){
       var image;
       $(function() {
-        if (message.image.url != null) {
-          image = "<img class='.message-zone__message__text' src=" + message.image.url + " alt=" + message.image.url + ">"
-        }else{
-          image = ''
-        }
+        message.image.url != null ? image = "<img class='.message-zone__message__text' src=" + message.image.url + " alt=" + message.image.url + ">" : image = ''
       });
       var html = `<div class="message-zone__message">
                     <div class="message-zone__message__member">
