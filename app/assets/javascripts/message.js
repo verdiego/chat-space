@@ -40,8 +40,7 @@ $(document).on('turbolinks:load', function(){
       .done(function(data){
         var html = buildHTML(data);
         $('.message-zone').append(html);
-        $('.send-message-zone__input').val('');
-        $('#message_image').val('');
+        $('#new_message')[0].reset();
         $('.send-message-zone__send').prop('disabled',false);
         $('.message-zone').animate({scrollTop: $('.message-zone')[0].scrollHeight}, 'slow');
       })
