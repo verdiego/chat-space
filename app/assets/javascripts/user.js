@@ -33,9 +33,7 @@ $(document).on('turbolinks:load', function(){
         })
         .done(function(users) {
           $("#user-search-result").empty();
-          if(input.length == 0){
-            appendNoUser("");
-          }else if (users.length !== 0) {
+          if(users.length !== 0) {
             users.forEach(function(user){
               appendUser(user);
             });
@@ -46,6 +44,8 @@ $(document).on('turbolinks:load', function(){
         .fail(function(){
           alert('ユーザー検索に失敗しました');
         });
+      }else{
+        $("#user-search-result").empty();
       }
     });
 
