@@ -34,18 +34,18 @@
       = f.label "チャットメンバー", class: "chat-group-form__label", id: "chat-group"
     .chat-group-form__field--right
       #chat-group-users
-        - group.users.each do |user|
+        .chat-group-user.clearfix
+          %p.chat-group-user__name
+            = current_user.name
+            = link_to "", class: 'user-search-remove chat-group-user__btn'
+      - group.users.each do |user|
+        - if user != current_user
           .chat-group-user.clearfix
             #chat-group-user
               = f.hidden_field :user_ids, value: user.id, multiple: true
               %p.chat-group-user__name
                 = user.name
-              - if current_user
-                = link_to "", class: 'user-search-remove chat-group-user__btn'
-              - else
                 = link_to "削除", class: 'user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'
-      / グループ作成機能の追加時はここにcollection_check_boxesの記述を入れてください
-      / = f.collection_check_boxes :user_ids, User.all, :id, :name
       / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
       /
         <div id='chat-group-users'>
