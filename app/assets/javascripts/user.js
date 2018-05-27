@@ -60,4 +60,51 @@ $(document).on('turbolinks:load', function(){
         $(this).parent().remove();
     })
   });
+  $(function(){
+    function buildMessage(message) {
+      var messages =` <div class="message-zone__message" data-message-id="10">
+                        <div class="message-zone__message__member">
+                          <span>
+                          ${message.user_name}
+                          </span>
+                        </div>
+                        <div class="message-zone__message__date">
+                          <span>
+                          ${message.created_at}
+                          </span>
+                        </div>
+                        <div class="message-zone__message__text">
+                          <p>
+                          ${message.content}
+                          </p>
+                        </div>
+                      </div>`
+      $('.message-zone').append(messages);
+    };
+
+    $(function(){
+      setInterval(update, 5000);
+    });
+    function update(){
+      if($('.message-zone__message')[0]){
+        var message_id = $('.message-zone__message:last').data('message-id');
+      } else {
+        var message_id = 0
+      }
+      $.ajax({
+        url: location.href,
+        type: 'GET',
+        data: {
+          id: message_id
+        },
+        dataType: 'json'
+      })
+      .always(function(new_message){
+        $.each(new_message, function(i, new_message){
+          buildMessage(new_message);
+          $('.message-zone').animate({scrollTop: $('.message-zone')[0].scrollHeight}, 'slow');
+        });
+      });
+    }
+  });
 });
