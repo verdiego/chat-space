@@ -5,7 +5,7 @@ $(document).on('turbolinks:load', function(){
       $(function() {
         message.image.url != null ? image = `<img class='.message-zone__message__text' src=" ${message.image.url} " alt=" ${message.image.url} ">` : image = ``
       });
-      var html = `<div class="message-zone__message">
+      var html = `<div class="message-zone__message" data-id="${message.id}">
                     <div class="message-zone__message__member">
                       <span>
                         ${message.user.name}
@@ -49,4 +49,3 @@ $(document).on('turbolinks:load', function(){
       })
     })
   });
-});
