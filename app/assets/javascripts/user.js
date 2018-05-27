@@ -62,7 +62,7 @@ $(document).on('turbolinks:load', function(){
   });
   $(function(){
     function buildMessage(message) {
-      var messages =` <div class="message-zone__message" data-message-id="10">
+      var messages =` <div class="message-zone__message" data-message-id="${message.id}">
                         <div class="message-zone__message__member">
                           <span>
                           ${message.user_name}
@@ -106,5 +106,6 @@ $(document).on('turbolinks:load', function(){
         });
       });
     }
+    clearInterval();
   });
 });
