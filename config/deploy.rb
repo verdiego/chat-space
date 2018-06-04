@@ -1,11 +1,6 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.0"
 
-set :application, "my_app_name"
-set :repo_url, "git@example.com:me/my_repo.git"
-# config valid only for current version of Capistrano
-lock '<Capistranoのバージョン>'
-
 set :application, 'chat-space'
 set :repo_url,  'git@github.com:verdiego/chat-space.git'
 
