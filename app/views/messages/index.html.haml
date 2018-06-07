@@ -5,11 +5,14 @@
   .chat-zone
     .chat-zone__group
       .chat-zone__group__name
-        %span SAMPLEグループ
+        %span
+          =@group.name
       = link_to "Edit", edit_group_path(@group), class: 'chat-zone__group__button'
       .chat-zone__group__member
-        %span Member:
-        %span メンバー
+        %span Member :
+        %span
+          - @group.users.each do |user|
+            #{user.name}&nbsp;
     .message-zone
       = render partial: 'message', collection: @messages
     .send-message-zone
