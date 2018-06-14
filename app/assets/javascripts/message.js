@@ -5,7 +5,7 @@ $(document).on('turbolinks:load', function(){
       $(function() {
         message.image.url != null ? image = `<img class='.message-zone__message__text' src=" ${message.image.url} " alt=" ${message.image.url} ">` : image = ``
       });
-      var html = `<div class="message-zone__message" data-id="${message.id}">
+      var html = `<div class="message-zone__message" data-message-id="${message.id}">
                     <div class="message-zone__message__member">
                       <span>
                         ${message.user.name}
@@ -48,8 +48,6 @@ $(document).on('turbolinks:load', function(){
         alert('error');
       })
     })
-  });
-  $(function(){
     function buildMessage(message) {
       var messages =` <div class="message-zone__message" data-message-id="${message.id}">
                         <div class="message-zone__message__member">
@@ -72,33 +70,38 @@ $(document).on('turbolinks:load', function(){
     };
 
     $(window).bind("load", function(){
-      if(document.URL.match(/..messages/)) {
+      if (window.location.href.match(/\/groups\/\d+\/messages/))  {
         $(function(){
-          setInterval(update, 5000);
+          interval = setInterval(update, 5000);
+        });
+      }
+      function update(){
+        if($('.message-zone__message')[0]){
+          var message_id = $('.message-zone__message:last').data('message-id');
+        } else {
+          var message_id = 0
+        }
+        $.ajax({
+          url: location.href,
+          type: 'GET',
+          data: {
+            id: message_id
+          },
+          dataType: 'json'
+        })
+        .done(function(new_messages) {
+          if (new_messages.length > 0) {
+            new_messages.forEach(function(new_message){
+            buildMessage(new_message);
+            $('.message-zone').animate({scrollTop: $('.message-zone')[0].scrollHeight}, 'slow');
+            })
+          };
+        })
+        .fail(function(){
+          alert('自動更新に失敗しました');
+          clearInterval(interval);
         });
       }
     });
-    function update(){
-      if($('.message-zone__message')[0]){
-        var message_id = $('.message-zone__message:last').data('message-id');
-      } else {
-        var message_id = 0
-      }
-      $.ajax({
-        url: location.href,
-        type: 'GET',
-        data: {
-          id: message_id
-        },
-        dataType: 'json'
-      })
-      .always(function(new_message){
-        $.each(new_message, function(i, new_message){
-          buildMessage(new_message);
-          $('.message-zone').animate({scrollTop: $('.message-zone')[0].scrollHeight}, 'slow');
-        });
-      });
-    }
-    clearInterval();
   });
 });
